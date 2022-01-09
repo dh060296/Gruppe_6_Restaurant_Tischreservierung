@@ -8,8 +8,16 @@ GO
 USE RESTAURANT_TISCHRESERVIERUNG;
 GO
 
+IF OBJECT_ID('Reservierung') IS NOT NULL
+    DROP TABLE Reservierung;
+GO
+
 IF OBJECT_ID('Kunde') IS NOT NULL
     DROP TABLE Kunde;
+GO
+
+IF OBJECT_ID('Tisch') IS NOT NULL
+    DROP TABLE Tisch;
 GO
 
 CREATE TABLE Kunde (
@@ -18,17 +26,9 @@ CREATE TABLE Kunde (
   Telefonnummer BIGINT
 );
 
-IF OBJECT_ID('Tisch') IS NOT NULL
-    DROP TABLE Tisch;
-GO
-
 CREATE TABLE Tisch (
   Tischnummer INT PRIMARY KEY
 );
-
-IF OBJECT_ID('Reservierung') IS NOT NULL
-    DROP TABLE Reservierung;
-GO
 
 CREATE TABLE Reservierung (
   Reservierungsnummer INT PRIMARY KEY,
