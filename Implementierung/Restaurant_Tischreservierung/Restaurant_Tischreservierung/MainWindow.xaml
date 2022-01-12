@@ -8,134 +8,55 @@
         Title="Restaurant_Tischreservierung" WindowState="Maximized" Height="450" Width="800">
     <Grid>
         <TabControl>
-            <TabItem Header="Eingabe Daten">
+            <TabItem Header="Reservierung">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        
                     </Grid.RowDefinitions>
-                    <Label>Tischanzahl:</Label>
-                    <TextBox Grid.Row="1"></TextBox>
-                    <Button Grid.Row="2">Restaurantdaten speichern</Button>
-                    <Label Grid.Row="4">Restaurant-ID:</Label>
-                    <TextBox Grid.Row="5"></TextBox>
-                    <Label Grid.Row="6">Stuhlanzahl:</Label>
-                    <TextBox Grid.Row="7"></TextBox>
-                    <Button Grid.Row="8">Tischdaten speichern</Button>
-                    <Label Grid.Row="10">Tischnummer:</Label>
-                    <TextBox Grid.Row="11"></TextBox>
-                    <Label Grid.Row="12">ReservierungsZeitpunkt:</Label>
-                    <TextBox Grid.Row="13"></TextBox>
-                    <Label Grid.Row="14">Vorname:</Label>
-                    <TextBox Grid.Row="15"></TextBox>
-                    <Label Grid.Row="16">Nachname:</Label>
-                    <TextBox Grid.Row="17"></TextBox>
-                    <Button Grid.Row="18">Kundendaten speichern</Button>
+                    <Label Grid.Row="0" Content="Name:"></Label>
+                    <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
+                    <TextBox x:Name="Tefelonnummer" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="4" Content="Reservierungszeitraum"></Label>
+                    <DatePicker Grid.Row="5" Grid.ColumnSpan="2"></DatePicker>
+                    <Button Grid.Row="6" Grid.ColumnSpan="2" Content="Reservierung eintragen"></Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Gespeicherte Daten">
-                <DataGrid></DataGrid>
-            </TabItem>
-            <TabItem Header="Daten ändern">
+            
+            <TabItem Header="Grafik">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <ListBox></ListBox>
-                            <ComboBox Grid.Row="1"></ComboBox>
-                            <Button Grid.Row="2">ausgewähltes Attribut vom Restaurant ändern</Button>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <ListBox></ListBox>
-                            <ComboBox Grid.Row="1"></ComboBox>
-                            <Button Grid.Row="2">ausgewähltes Attribut vom Tisch ändern</Button>
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="30"/>
-                        </Grid.RowDefinitions>
-                        <ListBox></ListBox>
-                        <ComboBox Grid.Row="1"></ComboBox>
-                        <Button Grid.Row="2">ausgewähltes Attribut vom Kunde ändern</Button>
-                    </Grid>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Daten löschen">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="30"/>
-                    </Grid.RowDefinitions>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <ListBox></ListBox>
-                            <Button Grid.Row="1">Restaurant löschen</Button>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <ListBox></ListBox>
-                            <Button Grid.Row="1">Tisch löschen</Button>
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="30"/>
-                        </Grid.RowDefinitions>
-                        <ListBox></ListBox>
-                        <Button Grid.Row="1">Kunde löschen</Button>
-                    </Grid>
-                    <Grid Grid.Row="2">
-                        <Button>Alle Daten löschen</Button>
-                    </Grid>
+                    <DatePicker Grid.Column="1" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Tisch 1"></Button>
+                    <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Tisch 3"></Button>
+                    <Button Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 2"></Button>
+                    <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 4"></Button>
+                    <Button Grid.Row="5" Grid.ColumnSpan="5" Content="Tisch 5"></Button>
                 </Grid>
             </TabItem>
         </TabControl>
