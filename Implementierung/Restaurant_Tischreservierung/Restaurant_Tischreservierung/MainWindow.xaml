@@ -33,50 +33,7 @@
                     <Button Grid.Row="6" Grid.ColumnSpan="2" Content="Reservierung eintragen"></Button>
                 </Grid>
             </TabItem>
-            <TabItem Header="Daten ändern">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <ListBox></ListBox>
-                            <ComboBox Grid.Row="1"></ComboBox>
-                            <Button Grid.Row="2">ausgewähltes Attribut vom Restaurant ändern</Button>
-                        </Grid>
-                        <Grid Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition Height="30"/>
-                            </Grid.RowDefinitions>
-                            <ListBox></ListBox>
-                            <ComboBox Grid.Row="1"></ComboBox>
-                            <Button Grid.Row="2">ausgewähltes Attribut vom Tisch ändern</Button>
-                        </Grid>
-                    </Grid>
-                    <Grid Grid.Row="1">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="30"/>
-                            <RowDefinition Height="30"/>
-                        </Grid.RowDefinitions>
-                        <ListBox></ListBox>
-                        <ComboBox Grid.Row="1"></ComboBox>
-                        <Button Grid.Row="2">ausgewähltes Attribut vom Kunde ändern</Button>
-                    </Grid>
-                </Grid>
-            </TabItem>
+            
             <TabItem Header="Grafik">
                 <Grid>
                     <Grid.ColumnDefinitions>
