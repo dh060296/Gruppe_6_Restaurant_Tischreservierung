@@ -14,13 +14,12 @@
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
@@ -30,23 +29,22 @@
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <Label>Tischanzahl:</Label>
+                    <Label>Name:</Label>
                     <TextBox Grid.Row="1"></TextBox>
-                    <Button Grid.Row="2">Restaurantdaten speichern</Button>
-                    <Label Grid.Row="4">Restaurant-ID:</Label>
-                    <TextBox Grid.Row="5"></TextBox>
-                    <Label Grid.Row="6">Stuhlanzahl:</Label>
+                    <Label Grid.Row="2">Telefonnummer:</Label>
+                    <TextBox Grid.Row="3"></TextBox>
+                    <Button Grid.Row="4">Kundendaten speichern</Button>
+                    <Label Grid.Row="6">Datum:</Label>
                     <TextBox Grid.Row="7"></TextBox>
-                    <Button Grid.Row="8">Tischdaten speichern</Button>
-                    <Label Grid.Row="10">Tischnummer:</Label>
+                    <Label Grid.Row="8">Reservierungsdatum:</Label>
+                    <TextBox Grid.Row="9"></TextBox>
+                    <Label Grid.Row="10">Kundennummer:</Label>
                     <TextBox Grid.Row="11"></TextBox>
-                    <Label Grid.Row="12">ReservierungsZeitpunkt:</Label>
+                    <Label Grid.Row="12">Tischnummer:</Label>
                     <TextBox Grid.Row="13"></TextBox>
-                    <Label Grid.Row="14">Vorname:</Label>
+                    <Label Grid.Row="14">ReservierungsZeitpunkt:</Label>
                     <TextBox Grid.Row="15"></TextBox>
-                    <Label Grid.Row="16">Nachname:</Label>
-                    <TextBox Grid.Row="17"></TextBox>
-                    <Button Grid.Row="18">Kundendaten speichern</Button>
+                    <Button Grid.Row="16">Reservierungsdaten speichern</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Gespeicherte Daten">
