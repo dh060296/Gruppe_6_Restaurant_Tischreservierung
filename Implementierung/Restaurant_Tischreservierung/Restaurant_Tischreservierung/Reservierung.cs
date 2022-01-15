@@ -15,8 +15,8 @@ namespace Restaurant_Tischreservierung
     public partial class Reservierung
     {
         public int Reservierungsnummer { get; set; }
-        public Nullable<System.DateTime> Datum { get; set; }
-        public Nullable<System.DateTime> Reservierungsdatum { get; set; }
+        public string Datum { get; set; }
+        public string Reservierungsdatum { get; set; }
         public Nullable<int> Kundennummer { get; set; }
         public Nullable<int> Tischnummer { get; set; }
     

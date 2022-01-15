@@ -28,19 +28,20 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Label>Name:</Label>
-                    <TextBox Grid.Row="1"></TextBox>
+                    <TextBox Grid.Row="1" Name="KundeNameTextBox"></TextBox>
                     <Label Grid.Row="2">Telefonnummer:</Label>
-                    <TextBox Grid.Row="3"></TextBox>
-                    <Button Grid.Row="4">Kundendaten speichern</Button>
+                    <TextBox Grid.Row="3" Name="KundeTelefonnummerTextBox"></TextBox>
+                    <Button Grid.Row="4" Click="KundendatenSpeichernButton_Click">Kundendaten speichern</Button>
+                    <TextBox Grid.Row="5" Name="MessageTextBox" Foreground="Red"></TextBox>
                     <Label Grid.Row="6">Datum:</Label>
-                    <TextBox Grid.Row="7"></TextBox>
+                    <TextBox Grid.Row="7" Name="ReservierungDatumTextBox"></TextBox>
                     <Label Grid.Row="8">Reservierungsdatum:</Label>
-                    <TextBox Grid.Row="9"></TextBox>
+                    <TextBox Grid.Row="9" Name="ReservierungReservierungsdatumTextBox"></TextBox>
                     <Label Grid.Row="10">Kundennummer:</Label>
-                    <TextBox Grid.Row="11"></TextBox>
+                    <TextBox Grid.Row="11" Name="ReserveriungKundennummerTextBox"></TextBox>
                     <Label Grid.Row="12">Tischnummer:</Label>
-                    <TextBox Grid.Row="13"></TextBox>
-                    <Button Grid.Row="14">Reservierungsdaten speichern</Button>
+                    <TextBox Grid.Row="13" Name="ReservierungTischnummerTextBox"></TextBox>
+                    <Button Grid.Row="14" Click="ReservierungsdatenSpeichernButton_Click">Reservierungsdaten speichern</Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Gespeicherte Daten">

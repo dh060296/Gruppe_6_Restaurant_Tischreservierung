@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RESTAURANT_TISCHRESERVIERUNGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RESTAURANT_TISCHRESERVIERUNGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kunde">
           <Key>
             <PropertyRef Name="Kundennummer" />
@@ -18,8 +18,8 @@
             <PropertyRef Name="Reservierungsnummer" />
           </Key>
           <Property Name="Reservierungsnummer" Type="int" Nullable="false" />
-          <Property Name="Datum" Type="datetime" />
-          <Property Name="Reservierungsdatum" Type="datetime" />
+          <Property Name="Datum" Type="nvarchar" MaxLength="100" />
+          <Property Name="Reservierungsdatum" Type="nvarchar" MaxLength="100" />
           <Property Name="Kundennummer" Type="int" />
           <Property Name="Tischnummer" Type="int" />
         </EntityType>
@@ -66,11 +66,23 @@
             <End Role="Reservierung" EntitySet="Reservierung" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RESTAURANT_TISCHRESERVIERUNGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RESTAURANT_TISCHRESERVIERUNGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kunde" EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Kunde" />
+          <EntitySet Name="Reservierung" EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung" />
+          <EntitySet Name="Tisch" EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Tisch" />
+          <AssociationSet Name="fk_kunde" Association="RESTAURANT_TISCHRESERVIERUNGModel.fk_kunde">
+            <End Role="Kunde" EntitySet="Kunde" />
+            <End Role="Reservierung" EntitySet="Reservierung" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tisch" Association="RESTAURANT_TISCHRESERVIERUNGModel.fk_tisch">
+            <End Role="Tisch" EntitySet="Tisch" />
+            <End Role="Reservierung" EntitySet="Reservierung" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Kunde">
           <Key>
             <PropertyRef Name="Kundennummer" />
@@ -78,30 +90,30 @@
           <Property Name="Kundennummer" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Telefonnummer" Type="Int64" />
-          <NavigationProperty Name="Reservierung" Relationship="Self.fk_kunde" FromRole="Kunde" ToRole="Reservierung" />
+          <NavigationProperty Name="Reservierung" Relationship="RESTAURANT_TISCHRESERVIERUNGModel.fk_kunde" FromRole="Kunde" ToRole="Reservierung" />
         </EntityType>
         <EntityType Name="Reservierung">
           <Key>
             <PropertyRef Name="Reservierungsnummer" />
           </Key>
           <Property Name="Reservierungsnummer" Type="Int32" Nullable="false" />
-          <Property Name="Datum" Type="DateTime" Precision="3" />
-          <Property Name="Reservierungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Datum" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Reservierungsdatum" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Kundennummer" Type="Int32" />
           <Property Name="Tischnummer" Type="Int32" />
-          <NavigationProperty Name="Kunde" Relationship="Self.fk_kunde" FromRole="Reservierung" ToRole="Kunde" />
-          <NavigationProperty Name="Tisch" Relationship="Self.fk_tisch" FromRole="Reservierung" ToRole="Tisch" />
+          <NavigationProperty Name="Kunde" Relationship="RESTAURANT_TISCHRESERVIERUNGModel.fk_kunde" FromRole="Reservierung" ToRole="Kunde" />
+          <NavigationProperty Name="Tisch" Relationship="RESTAURANT_TISCHRESERVIERUNGModel.fk_tisch" FromRole="Reservierung" ToRole="Tisch" />
         </EntityType>
         <EntityType Name="Tisch">
           <Key>
             <PropertyRef Name="Tischnummer" />
           </Key>
           <Property Name="Tischnummer" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Reservierung" Relationship="Self.fk_tisch" FromRole="Tisch" ToRole="Reservierung" />
+          <NavigationProperty Name="Reservierung" Relationship="RESTAURANT_TISCHRESERVIERUNGModel.fk_tisch" FromRole="Tisch" ToRole="Reservierung" />
         </EntityType>
         <Association Name="fk_kunde">
-          <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
-          <End Role="Reservierung" Type="Self.Reservierung" Multiplicity="*" />
+          <End Type="RESTAURANT_TISCHRESERVIERUNGModel.Kunde" Role="Kunde" Multiplicity="0..1" />
+          <End Type="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung" Role="Reservierung" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Kunde">
               <PropertyRef Name="Kundennummer" />
@@ -112,8 +124,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tisch">
-          <End Role="Tisch" Type="Self.Tisch" Multiplicity="0..1" />
-          <End Role="Reservierung" Type="Self.Reservierung" Multiplicity="*" />
+          <End Type="RESTAURANT_TISCHRESERVIERUNGModel.Tisch" Role="Tisch" Multiplicity="0..1" />
+          <End Type="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung" Role="Reservierung" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tisch">
               <PropertyRef Name="Tischnummer" />
@@ -123,19 +135,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="RESTAURANT_TISCHRESERVIERUNGEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Kunde" EntityType="Self.Kunde" />
-          <EntitySet Name="Reservierung" EntityType="Self.Reservierung" />
-          <EntitySet Name="Tisch" EntityType="Self.Tisch" />
-          <AssociationSet Name="fk_kunde" Association="Self.fk_kunde">
-            <End Role="Kunde" EntitySet="Kunde" />
-            <End Role="Reservierung" EntitySet="Reservierung" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tisch" Association="Self.fk_tisch">
-            <End Role="Tisch" EntitySet="Tisch" />
-            <End Role="Reservierung" EntitySet="Reservierung" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -145,20 +144,20 @@
           <EntitySetMapping Name="Kunde">
             <EntityTypeMapping TypeName="RESTAURANT_TISCHRESERVIERUNGModel.Kunde">
               <MappingFragment StoreEntitySet="Kunde">
-                <ScalarProperty Name="Kundennummer" ColumnName="Kundennummer" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Telefonnummer" ColumnName="Telefonnummer" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Kundennummer" ColumnName="Kundennummer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reservierung">
             <EntityTypeMapping TypeName="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung">
               <MappingFragment StoreEntitySet="Reservierung">
-                <ScalarProperty Name="Reservierungsnummer" ColumnName="Reservierungsnummer" />
-                <ScalarProperty Name="Datum" ColumnName="Datum" />
-                <ScalarProperty Name="Reservierungsdatum" ColumnName="Reservierungsdatum" />
-                <ScalarProperty Name="Kundennummer" ColumnName="Kundennummer" />
                 <ScalarProperty Name="Tischnummer" ColumnName="Tischnummer" />
+                <ScalarProperty Name="Kundennummer" ColumnName="Kundennummer" />
+                <ScalarProperty Name="Reservierungsdatum" ColumnName="Reservierungsdatum" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Reservierungsnummer" ColumnName="Reservierungsnummer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

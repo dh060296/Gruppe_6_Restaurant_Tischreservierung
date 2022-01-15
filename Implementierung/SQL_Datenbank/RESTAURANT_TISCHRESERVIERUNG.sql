@@ -32,8 +32,8 @@ CREATE TABLE Tisch (
 
 CREATE TABLE Reservierung (
   Reservierungsnummer INT PRIMARY KEY,
-  Datum Datetime,
-  Reservierungsdatum Datetime,
+  Datum NVARCHAR(100),
+  Reservierungsdatum NVARCHAR(100),
   Kundennummer INT,
   Tischnummer INT,
   CONSTRAINT fk_kunde FOREIGN KEY (Kundennummer)

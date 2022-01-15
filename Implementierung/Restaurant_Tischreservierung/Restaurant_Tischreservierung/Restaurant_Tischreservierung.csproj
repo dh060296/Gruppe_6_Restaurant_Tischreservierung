@@ -64,15 +64,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Kunde.cs">
+      <DependentUpon>restaurant_tischreservierungModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reservierung.cs">
+      <DependentUpon>restaurant_tischreservierungModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="restaurant_tischreservierungModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>restaurant_tischreservierungModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="restaurant_tischreservierungModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>restaurant_tischreservierungModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="restaurant_tischreservierungModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>restaurant_tischreservierungModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Tisch.cs">
+      <DependentUpon>restaurant_tischreservierungModel.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +139,12 @@
     <Content Include="restaurant_tischreservierungModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>restaurant_tischreservierungModel.Context.cs</LastGenOutput>
+      <DependentUpon>restaurant_tischreservierungModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="restaurant_tischreservierungModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>restaurant_tischreservierungModel.edmx</DependentUpon>
+      <LastGenOutput>restaurant_tischreservierungModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

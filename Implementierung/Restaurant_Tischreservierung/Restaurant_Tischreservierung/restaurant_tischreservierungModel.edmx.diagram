@@ -5,11 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="24322a256bc64af4a0a877b53318006d" Name="Diagram1">
-        <EntityTypeShape EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Kunde" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Tisch" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="RESTAURANT_TISCHRESERVIERUNGModel.fk_kunde" ManuallyRouted="false" />
-        <AssociationConnector Association="RESTAURANT_TISCHRESERVIERUNGModel.fk_tisch" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Kunde" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="RESTAURANT_TISCHRESERVIERUNGModel.Tisch" Width="1.5" PointX="0.75" PointY="5.375" />
+        <AssociationConnector Association="RESTAURANT_TISCHRESERVIERUNGModel.fk_kunde" />
+        <AssociationConnector Association="RESTAURANT_TISCHRESERVIERUNGModel.fk_tisch" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
