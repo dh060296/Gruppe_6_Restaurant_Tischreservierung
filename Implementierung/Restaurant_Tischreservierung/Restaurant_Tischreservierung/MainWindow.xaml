@@ -12,7 +12,6 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
@@ -22,17 +21,27 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
-                        
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Name:"></Label>
-                    <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="0" Content="Name:" Grid.ColumnSpan="2"></Label>
+                    <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="2" ></TextBox>
                     <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
-                    <TextBox x:Name="Tefelonnummer" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-                    <Label Grid.Row="4" Content="Reservierungszeitraum"></Label>
-                    <DatePicker Grid.Row="5" Grid.ColumnSpan="2"></DatePicker>
-                    <Button Grid.Row="6" Grid.ColumnSpan="2" Content="Reservierung eintragen"></Button>
+                    <TextBox x:Name="Telefonnummer" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="4" Grid.ColumnSpan="2" Content="Tischnummer:"></Label>
+                    <TextBox x:Name="Tischnummer" Grid.Row="5" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="6" Content="Reservierungszeitraum" Grid.ColumnSpan="2"></Label>
+                    <DatePicker Grid.Row="7" Grid.ColumnSpan="2" x:Name="ReservierungsDatum"></DatePicker>
+                    <Button  x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="2" Content="Reservierung eintragen" Click="Btn_Reservierung_Click" ></Button>
+
+                    
+
                 </Grid>
+                
+                
             </TabItem>
+
             
             <TabItem Header="Grafik">
                 <Grid>
@@ -52,11 +61,11 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <DatePicker Grid.Column="1" Height="25" VerticalAlignment="Top"></DatePicker>
-                    <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Tisch 1"></Button>
-                    <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Tisch 3"></Button>
-                    <Button Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 2"></Button>
-                    <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 4"></Button>
-                    <Button Grid.Row="5" Grid.ColumnSpan="5" Content="Tisch 5"></Button>
+                    <Button x:Name="Tisch1" Grid.Row="1" Grid.ColumnSpan="2" Content="Tisch 1"></Button>
+                    <Button x:Name="Tisch2" Grid.Row="3" Grid.ColumnSpan="2" Content="Tisch 3"></Button>
+                    <Button x:Name="Tisch3" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 2"></Button>
+                    <Button x:Name="Tisch4" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 4"></Button>
+                    <Button x:Name="Tisch5" Grid.Row="5" Grid.ColumnSpan="5" Content="Tisch 5"></Button>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -21,7 +21,7 @@ IF OBJECT_ID('Tisch') IS NOT NULL
 GO
 
 CREATE TABLE Kunde (
-  Kundennummer INT PRIMARY KEY, 
+  Kundennummer INT  NOT NULL PRIMARY KEY, 
   Name NVARCHAR(100),
   Telefonnummer BIGINT
 );
@@ -31,7 +31,7 @@ CREATE TABLE Tisch (
 );
 
 CREATE TABLE Reservierung (
-  Reservierungsnummer INT PRIMARY KEY,
+  Reservierungsnummer INT Not NULL PRIMARY KEY,
   Datum Datetime,
   Reservierungsdatum Datetime,
   Kundennummer INT,
