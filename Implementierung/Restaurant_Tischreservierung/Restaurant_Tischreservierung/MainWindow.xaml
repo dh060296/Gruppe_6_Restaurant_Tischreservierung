@@ -23,7 +23,7 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
-
+                        
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Content="Name:" Grid.ColumnSpan="2"></Label>
                     <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
@@ -36,7 +36,7 @@
                     <Button x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="2" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
                 </Grid>
             </TabItem>
-
+            
             <TabItem Header="Grafik">
                 <Grid>
                     <Grid.ColumnDefinitions>

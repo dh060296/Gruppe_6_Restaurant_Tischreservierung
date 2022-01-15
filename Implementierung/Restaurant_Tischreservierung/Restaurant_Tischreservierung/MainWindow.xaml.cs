@@ -24,5 +24,10 @@ namespace Restaurant_Tischreservierung
         {
             InitializeComponent();
         }
+
+        private void Btn_Reservierung_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
