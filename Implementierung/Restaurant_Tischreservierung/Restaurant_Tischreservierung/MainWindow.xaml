@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant_Tischreservierung"
         mc:Ignorable="d"
-        Title="Restaurant_Tischreservierung" WindowState="Maximized" Height="450" Width="800">
-    <Grid>
+        Title="Restaurant_Tischreservierung" WindowState="Maximized" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid x:Name="ParentGrid">
         <TabControl>
             <TabItem Header="Eingabe Daten">
                 <Grid>
@@ -32,7 +32,7 @@
                     <Label Grid.Row="2">Telefonnummer:</Label>
                     <TextBox Grid.Row="3" Name="KundeTelefonnummerTextBox"></TextBox>
                     <Button Grid.Row="4" Click="KundendatenSpeichernButton_Click">Kundendaten speichern</Button>
-                    <TextBox Grid.Row="5" Name="MessageTextBox" Foreground="Red"></TextBox>
+                    <TextBox Grid.Row="5" Name="MessageTextBox"></TextBox>
                     <Label Grid.Row="6">Datum:</Label>
                     <TextBox Grid.Row="7" Name="ReservierungDatumTextBox"></TextBox>
                     <Label Grid.Row="8">Reservierungsdatum:</Label>
@@ -45,7 +45,35 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Gespeicherte Daten">
-                <DataGrid></DataGrid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid
+                        ItemsSource="{Binding }"
+                        AutoGenerateColumns="False"
+                          IsSynchronizedWithCurrentItem="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Kundennummer" Binding="{Binding Kundennummer}" />
+                            <DataGridTextColumn Header="Name"  Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="Telefonnummer"  Binding="{Binding Telefonnummer}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid Grid.Row="1"
+                        ItemsSource="{Binding  }"
+                        AutoGenerateColumns="False"
+                          IsSynchronizedWithCurrentItem="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Reservierungsnummer" Binding="{Binding Reservierungsnummer}" />
+                            <DataGridTextColumn Header="Datum"  Binding="{Binding Datum}" />
+                            <DataGridTextColumn Header="Reservierungsdatum"  Binding="{Binding Reservierungsdatum}" />
+                            <DataGridTextColumn Header="Kundennummer"  Binding="{Binding Kundennummer}" />
+                            <DataGridTextColumn Header="Tischnummer"  Binding="{Binding Tischnummer}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                
             </TabItem>
             <TabItem Header="Daten ändern">
                 <Grid>

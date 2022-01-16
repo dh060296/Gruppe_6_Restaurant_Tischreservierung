@@ -67,6 +67,7 @@
     <Compile Include="Kunde.cs">
       <DependentUpon>restaurant_tischreservierungModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.cs" />
     <Compile Include="Reservierung.cs">
       <DependentUpon>restaurant_tischreservierungModel.tt</DependentUpon>
     </Compile>

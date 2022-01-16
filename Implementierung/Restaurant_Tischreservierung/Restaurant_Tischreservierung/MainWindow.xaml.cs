@@ -22,7 +22,7 @@ namespace Restaurant_Tischreservierung
         {
             InitializeComponent();
         }
-
+        // Eingabe Daten
         private static int kundeKundennummer = 0;
         private static int reservierungsnummer = 0;
 
@@ -55,6 +55,7 @@ namespace Restaurant_Tischreservierung
                 {
                     if(k.Name == kunde.Name && k.Telefonnummer == k.Telefonnummer)
                     {
+                        MessageTextBox.Foreground = Brushes.Red;
                         MessageTextBox.Text = "Dieser Kunde wurde schon früher gespeichert!";
                         kundeSchonVorhanden = true;
                     }
@@ -65,6 +66,9 @@ namespace Restaurant_Tischreservierung
                 {
                     Context.Kunde.Add(k);
                     Context.SaveChanges();
+
+                    MessageTextBox.Foreground = Brushes.Green;
+                    MessageTextBox.Text = "Kunde erfolgreich gespeichert!";
                 }
            
                 KundeNameTextBox.Text = "";
@@ -72,6 +76,7 @@ namespace Restaurant_Tischreservierung
             }
             else
             {
+                MessageTextBox.Foreground = Brushes.Red;
                 MessageTextBox.Text = "Du must in beide Textboxen Daten eingeben!";
             }
         }
@@ -109,6 +114,7 @@ namespace Restaurant_Tischreservierung
                     if (r.Datum == reservierung.Datum && r.Reservierungsdatum == reservierung.Reservierungsdatum &&
                         r.Kundennummer == reservierung.Kundennummer && r.Tischnummer == reservierung.Tischnummer)
                     {
+                        MessageTextBox.Foreground = Brushes.Red;
                         MessageTextBox.Text = "Diese Reservierung wurde schon früher gespeichert!";
                         reservierungSchonVorhanden = true;
                     }
@@ -126,6 +132,7 @@ namespace Restaurant_Tischreservierung
                 }
                 if(!KundeExistiert)
                 {
+                    MessageTextBox.Foreground = Brushes.Red;
                     MessageTextBox.Text = "Die angegebene Kundennummer gibt es nicht!";
                 }
 
@@ -141,6 +148,7 @@ namespace Restaurant_Tischreservierung
                 }
                 if (!TischExistiert)
                 {
+                    MessageTextBox.Foreground = Brushes.Red;
                     MessageTextBox.Text = "Die angegebene Tischnummer gibt es nicht!";
                 }
 
@@ -149,6 +157,9 @@ namespace Restaurant_Tischreservierung
                 {
                     Context.Reservierung.Add(r);
                     Context.SaveChanges();
+
+                    MessageTextBox.Foreground = Brushes.Green;
+                    MessageTextBox.Text = "Reservierung erfolgreich gespeichert!";
                 }
 
                 ReservierungDatumTextBox.Text = "";
@@ -158,6 +169,7 @@ namespace Restaurant_Tischreservierung
             }
             else
             {
+                MessageTextBox.Foreground = Brushes.Red;
                 MessageTextBox.Text = "Du must in alle 4 Textboxen Daten eingeben!";
             }
         }
