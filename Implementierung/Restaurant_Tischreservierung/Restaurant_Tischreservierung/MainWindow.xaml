@@ -65,7 +65,7 @@
                 </Grid>
             </TabItem>
             
-            <TabItem Header="Tische 0-15">
+            <TabItem Header="Innenbereich">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -110,25 +110,25 @@
                         <ComboBoxItem>30</ComboBoxItem>
                         <ComboBoxItem>45</ComboBoxItem>
                     </ComboBox>
-                    <Button x:Name="Tisch1" Grid.Row="1" Grid.Column="0" Content="Tisch 1"></Button>
-                    <Button x:Name="Tisch2" Grid.Row="1" Grid.Column="2" Content="Tisch 2"></Button>
-                    <Button x:Name="Tisch3" Grid.Row="1" Grid.Column="4" Content="Tisch 3"></Button>
-                    <Button x:Name="Tisch4" Grid.Row="1" Grid.Column="6" Content="Tisch 4"></Button>
-                    <Button x:Name="Tisch5" Grid.Row="1" Grid.Column="8" Content="Tisch 5"></Button>
-                    <Button x:Name="Tisch6" Grid.Row="3" Grid.Column="0" Content="Tisch 6"></Button>
-                    <Button x:Name="Tisch7" Grid.Row="3" Grid.Column="2" Content="Tisch 7"></Button>
-                    <Button x:Name="Tisch8" Grid.Row="3" Grid.Column="4"  Content="Tisch 8"></Button>
-                    <Button x:Name="Tisch9" Grid.Row="3" Grid.Column="6"  Content="Tisch 9"></Button>
-                    <Button x:Name="Tisch10" Grid.Row="3" Grid.Column="8"  Content="Tisch 10"></Button>
-                    <Button x:Name="Tisch11" Grid.Row="5" Grid.Column="0" Content="Tisch 11"></Button>
-                    <Button x:Name="Tisch12" Grid.Row="5" Grid.Column="2" Content="Tisch 12"></Button>
-                    <Button x:Name="Tisch13" Grid.Row="5" Grid.Column="4"  Content="Tisch 13"></Button>
-                    <Button x:Name="Tisch14" Grid.Row="5" Grid.Column="6"  Content="Tisch 14"></Button>
-                    <Button x:Name="Tisch15" Grid.Row="5" Grid.Column="8" Content="Tisch 15"></Button>
+                    <Button x:Name="Tisch1" Grid.Row="1" Grid.Column="0" Content="Tisch 1" Click="Tisch1_Click"></Button>
+                    <Button x:Name="Tisch2" Grid.Row="1" Grid.Column="2" Content="Tisch 2" Click="Tisch2_Click"></Button>
+                    <Button x:Name="Tisch3" Grid.Row="1" Grid.Column="4" Content="Tisch 3" Click="Tisch3_Click"></Button>
+                    <Button x:Name="Tisch4" Grid.Row="1" Grid.Column="6" Content="Tisch 4" Click="Tisch4_Click"></Button>
+                    <Button x:Name="Tisch5" Grid.Row="1" Grid.Column="8" Content="Tisch 5" Click="Tisch5_Click"></Button>
+                    <Button x:Name="Tisch6" Grid.Row="3" Grid.Column="0" Content="Tisch 6" Click="Tisch6_Click"></Button>
+                    <Button x:Name="Tisch7" Grid.Row="3" Grid.Column="2" Content="Tisch 7" Click="Tisch7_Click"></Button>
+                    <Button x:Name="Tisch8" Grid.Row="3" Grid.Column="4"  Content="Tisch 8" Click="Tisch8_Click"></Button>
+                    <Button x:Name="Tisch9" Grid.Row="3" Grid.Column="6"  Content="Tisch 9" Click="Tisch9_Click"></Button>
+                    <Button x:Name="Tisch10" Grid.Row="3" Grid.Column="8"  Content="Tisch 10" Click="Tisch10_Click"></Button>
+                    <Button x:Name="Tisch11" Grid.Row="5" Grid.Column="0" Content="Tisch 11" Click="Tisch11_Click"></Button>
+                    <Button x:Name="Tisch12" Grid.Row="5" Grid.Column="2" Content="Tisch 12" Click="Tisch12_Click"></Button>
+                    <Button x:Name="Tisch13" Grid.Row="5" Grid.Column="4"  Content="Tisch 13" Click="Tisch13_Click"></Button>
+                    <Button x:Name="Tisch14" Grid.Row="5" Grid.Column="6"  Content="Tisch 14" Click="Tisch14_Click"></Button>
+                    <Button x:Name="Tisch15" Grid.Row="5" Grid.Column="8" Content="Tisch 15" Click="Tisch15_Click"></Button>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Tische 15-30">
+            <TabItem Header="Außenbereich">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -173,21 +173,21 @@
                         <ComboBoxItem>30</ComboBoxItem>
                         <ComboBoxItem>45</ComboBoxItem>
                     </ComboBox>
-                    <Button x:Name="Tisch16" Grid.Row="1" Grid.Column="0" Content="Tisch 16"></Button>
-                    <Button x:Name="Tisch17" Grid.Row="1" Grid.Column="2" Content="Tisch 17"></Button>
-                    <Button x:Name="Tisch18" Grid.Row="1" Grid.Column="4" Content="Tisch 18"></Button>
-                    <Button x:Name="Tisch19" Grid.Row="1" Grid.Column="6" Content="Tisch 19"></Button>
-                    <Button x:Name="Tisch20" Grid.Row="1" Grid.Column="8" Content="Tisch 20"></Button>
-                    <Button x:Name="Tisch21" Grid.Row="3" Grid.Column="0" Content="Tisch 21"></Button>
-                    <Button x:Name="Tisch22" Grid.Row="3" Grid.Column="2" Content="Tisch 22"></Button>
-                    <Button x:Name="Tisch23" Grid.Row="3" Grid.Column="4"  Content="Tisch 23"></Button>
-                    <Button x:Name="Tisch24" Grid.Row="3" Grid.Column="6"  Content="Tisch 24"></Button>
-                    <Button x:Name="Tisch25" Grid.Row="3" Grid.Column="8"  Content="Tisch 25"></Button>
-                    <Button x:Name="Tisch26" Grid.Row="5" Grid.Column="0" Content="Tisch 26"></Button>
-                    <Button x:Name="Tisch27" Grid.Row="5" Grid.Column="2" Content="Tisch 27"></Button>
-                    <Button x:Name="Tisch28" Grid.Row="5" Grid.Column="4"  Content="Tisch 28"></Button>
-                    <Button x:Name="Tisch29" Grid.Row="5" Grid.Column="6"  Content="Tisch 29"></Button>
-                    <Button x:Name="Tisch30" Grid.Row="5" Grid.Column="8" Content="Tisch 30"></Button>
+                    <Button x:Name="Tisch101" Grid.Row="1" Grid.Column="0" Content="Tisch 101" Click="Tisch101_Click"></Button>
+                    <Button x:Name="Tisch102" Grid.Row="1" Grid.Column="2" Content="Tisch 102" Click="Tisch102_Click"></Button>
+                    <Button x:Name="Tisch103" Grid.Row="1" Grid.Column="4" Content="Tisch 103" Click="Tisch103_Click"></Button>
+                    <Button x:Name="Tisch104" Grid.Row="1" Grid.Column="6" Content="Tisch 104" Click="Tisch104_Click"></Button>
+                    <Button x:Name="Tisch105" Grid.Row="1" Grid.Column="8" Content="Tisch 105" Click="Tisch105_Click"></Button>
+                    <Button x:Name="Tisch106" Grid.Row="3" Grid.Column="0" Content="Tisch 106" Click="Tisch106_Click"></Button>
+                    <Button x:Name="Tisch107" Grid.Row="3" Grid.Column="2" Content="Tisch 107" Click="Tisch107_Click"></Button>
+                    <Button x:Name="Tisch108" Grid.Row="3" Grid.Column="4"  Content="Tisch 108" Click="Tisch108_Click"></Button>
+                    <Button x:Name="Tisch109" Grid.Row="3" Grid.Column="6"  Content="Tisch 109" Click="Tisch109_Click"></Button>
+                    <Button x:Name="Tisch110" Grid.Row="3" Grid.Column="8"  Content="Tisch 110" Click="Tisch110_Click"></Button>
+                    <Button x:Name="Tisch111" Grid.Row="5" Grid.Column="0" Content="Tisch 111" Click="Tisch111_Click"></Button>
+                    <Button x:Name="Tisch112" Grid.Row="5" Grid.Column="2" Content="Tisch 112" Click="Tisch112_Click"></Button>
+                    <Button x:Name="Tisch113" Grid.Row="5" Grid.Column="4"  Content="Tisch 113" Click="Tisch113_Click"></Button>
+                    <Button x:Name="Tisch114" Grid.Row="5" Grid.Column="6"  Content="Tisch 114" Click="Tisch114_Click"></Button>
+                    <Button x:Name="Tisch115" Grid.Row="5" Grid.Column="8" Content="Tisch 115" Click="Tisch115_Click"></Button>
                 </Grid>
             </TabItem>
 
