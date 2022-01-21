@@ -5,41 +5,74 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant_Tischreservierung"
         mc:Ignorable="d"
-        Title="Restaurant_Tischreservierung" WindowState="Maximized" Height="450" Width="800">
-    <Grid>
+        Title="Restaurant_Tischreservierung" Loaded="Window_Loaded" WindowState="Normal"  Height="450" Width="800">
+    <Grid x:Name="ParentGrid"> 
         <TabControl>
             <TabItem Header="Reservierung">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Name:" Grid.ColumnSpan="2"></Label>
-                    <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+                    
+                    <Label Grid.Row="0" Content="Vor- und Nachname:" Grid.ColumnSpan="3"></Label>
+                    <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="3"></TextBox>
                     <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
-                    <TextBox x:Name="Tefelonnummer" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-                    <Label Grid.Row="4" Grid.ColumnSpan="2" Content="Tischnummer:"></Label>
-                    <TextBox x:Name="Tischnummer" Grid.Row="5" Grid.ColumnSpan="2"></TextBox>
-                    <Label Grid.Row="6" Content="Reservierungszeitraum" Grid.ColumnSpan="2"></Label>
-                    <DatePicker Grid.Row="7" Grid.ColumnSpan="2"></DatePicker>
-                    <Button x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="2" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
+                    <TextBox x:Name="Telefonnummer" Grid.Row="3" Grid.ColumnSpan="3"></TextBox>
+                    <Label Grid.Row="4" Grid.ColumnSpan="3" Content="Tischnummer:"></Label>
+                    <TextBox x:Name="Tischnummer" Grid.Row="5" Grid.ColumnSpan="3"></TextBox>
+                    <Label Grid.Row="6" Content="Reservierungszeitraum" Grid.ColumnSpan="3"></Label>
+                    <DatePicker x:Name="Reservierungsdatum" SelectedDateFormat="Short" Grid.Row="7"></DatePicker>
+                    <Label Grid.Row="6" Content="Uhrzeit Stunden" Grid.Column="1"></Label>
+                    <ComboBox  x:Name="CB_TimeHour" Grid.Row="7" Grid.Column="1" IsReadOnly="True">
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>21</ComboBoxItem>
+                        <ComboBoxItem>22</ComboBoxItem>
+                        <ComboBoxItem>23</ComboBoxItem>
+                    </ComboBox>
+                    <Label Grid.Row="6" Content="Uhrzeit Minuten" Grid.Column="2"></Label>
+                    <ComboBox  x:Name="CB_TimeMinute" Grid.Row="7" Grid.Column="2" IsReadOnly="True">
+                        <ComboBoxItem>00</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>30</ComboBoxItem>
+                        <ComboBoxItem>45</ComboBoxItem>
+                    </ComboBox>
+                    
+                    <Button x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="3" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
                 </Grid>
             </TabItem>
             
-            <TabItem Header="Grafik">
+            <TabItem Header="Tische 0-15">
                 <Grid>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
@@ -54,12 +87,138 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker Grid.Column="1" Height="25" VerticalAlignment="Top"></DatePicker>
-                    <Button x:Name="Tisch1" Grid.Row="1" Grid.ColumnSpan="2" Content="Tisch 1"></Button>
-                    <Button x:Name="Tisch2" Grid.Row="3" Grid.ColumnSpan="2" Content="Tisch 3"></Button>
-                    <Button x:Name="Tisch3" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 2"></Button>
-                    <Button x:Name="Tisch4" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="Tisch 4"></Button>
-                    <Button x:Name="Tisch5" Grid.Row="5" Grid.ColumnSpan="5" Content="Tisch 5"></Button>
+                    <DatePicker Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <ComboBox  x:Name="CB_Stunde1" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>21</ComboBoxItem>
+                        <ComboBoxItem>22</ComboBoxItem>
+                        <ComboBoxItem>23</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox  x:Name="CB_Minute1" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                        <ComboBoxItem>00</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>30</ComboBoxItem>
+                        <ComboBoxItem>45</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="Tisch1" Grid.Row="1" Grid.Column="0" Content="Tisch 1"></Button>
+                    <Button x:Name="Tisch2" Grid.Row="1" Grid.Column="2" Content="Tisch 2"></Button>
+                    <Button x:Name="Tisch3" Grid.Row="1" Grid.Column="4" Content="Tisch 3"></Button>
+                    <Button x:Name="Tisch4" Grid.Row="1" Grid.Column="6" Content="Tisch 4"></Button>
+                    <Button x:Name="Tisch5" Grid.Row="1" Grid.Column="8" Content="Tisch 5"></Button>
+                    <Button x:Name="Tisch6" Grid.Row="3" Grid.Column="0" Content="Tisch 6"></Button>
+                    <Button x:Name="Tisch7" Grid.Row="3" Grid.Column="2" Content="Tisch 7"></Button>
+                    <Button x:Name="Tisch8" Grid.Row="3" Grid.Column="4"  Content="Tisch 8"></Button>
+                    <Button x:Name="Tisch9" Grid.Row="3" Grid.Column="6"  Content="Tisch 9"></Button>
+                    <Button x:Name="Tisch10" Grid.Row="3" Grid.Column="8"  Content="Tisch 10"></Button>
+                    <Button x:Name="Tisch11" Grid.Row="5" Grid.Column="0" Content="Tisch 11"></Button>
+                    <Button x:Name="Tisch12" Grid.Row="5" Grid.Column="2" Content="Tisch 12"></Button>
+                    <Button x:Name="Tisch13" Grid.Row="5" Grid.Column="4"  Content="Tisch 13"></Button>
+                    <Button x:Name="Tisch14" Grid.Row="5" Grid.Column="6"  Content="Tisch 14"></Button>
+                    <Button x:Name="Tisch15" Grid.Row="5" Grid.Column="8" Content="Tisch 15"></Button>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Tische 15-30">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <DatePicker Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <ComboBox  x:Name="CB_Stunde2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>21</ComboBoxItem>
+                        <ComboBoxItem>22</ComboBoxItem>
+                        <ComboBoxItem>23</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox  x:Name="CB_Minute3" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                        <ComboBoxItem>00</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>30</ComboBoxItem>
+                        <ComboBoxItem>45</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="Tisch16" Grid.Row="1" Grid.Column="0" Content="Tisch 16"></Button>
+                    <Button x:Name="Tisch17" Grid.Row="1" Grid.Column="2" Content="Tisch 17"></Button>
+                    <Button x:Name="Tisch18" Grid.Row="1" Grid.Column="4" Content="Tisch 18"></Button>
+                    <Button x:Name="Tisch19" Grid.Row="1" Grid.Column="6" Content="Tisch 19"></Button>
+                    <Button x:Name="Tisch20" Grid.Row="1" Grid.Column="8" Content="Tisch 20"></Button>
+                    <Button x:Name="Tisch21" Grid.Row="3" Grid.Column="0" Content="Tisch 21"></Button>
+                    <Button x:Name="Tisch22" Grid.Row="3" Grid.Column="2" Content="Tisch 22"></Button>
+                    <Button x:Name="Tisch23" Grid.Row="3" Grid.Column="4"  Content="Tisch 23"></Button>
+                    <Button x:Name="Tisch24" Grid.Row="3" Grid.Column="6"  Content="Tisch 24"></Button>
+                    <Button x:Name="Tisch25" Grid.Row="3" Grid.Column="8"  Content="Tisch 25"></Button>
+                    <Button x:Name="Tisch26" Grid.Row="5" Grid.Column="0" Content="Tisch 26"></Button>
+                    <Button x:Name="Tisch27" Grid.Row="5" Grid.Column="2" Content="Tisch 27"></Button>
+                    <Button x:Name="Tisch28" Grid.Row="5" Grid.Column="4"  Content="Tisch 28"></Button>
+                    <Button x:Name="Tisch29" Grid.Row="5" Grid.Column="6"  Content="Tisch 29"></Button>
+                    <Button x:Name="Tisch30" Grid.Row="5" Grid.Column="8" Content="Tisch 30"></Button>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Reservierungen Anzeigen">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <DataGrid Grid.Row="0" Grid.ColumnSpan="2"
+                              ItemsSource="{Binding }"
+                              AutoGenerateColumns="False"
+                              IsSynchronizedWithCurrentItem="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Reservierungsnummer" Binding="{Binding Reservierungsnummer}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Reservierungsdatum" Binding="{Binding Reservierungsdatum}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kundennummer" Binding="{Binding Kundennummer}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tischnummer" Binding="{Binding Tischnummer}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kundenname" Binding="{Binding Kunde/Kunde.Name}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="Kundenname:" Grid.Row="1"></Label>
+                    <TextBox x:Name="KundenSuche" Grid.Row="2" Grid.ColumnSpan="2"></TextBox>
                 </Grid>
             </TabItem>
         </TabControl>
