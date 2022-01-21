@@ -157,153 +157,304 @@ namespace Restaurant_Tischreservierung
         }
         private void Tisch1_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            Tischnummer.Text = "1";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
+
+            TiRes.IsSelected = true ;
 
         }
 
         private void Tisch2_Click(object sender, RoutedEventArgs e)
         {
-            
+            Tischnummer.Text = "2";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
+
+            TiRes.IsSelected = true;
         }
 
         private void Tisch3_Click(object sender, RoutedEventArgs e)
         {
-            
+            Tischnummer.Text = "3";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
+
+            TiRes.IsSelected = true;
         }
 
         private void Tisch4_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "4";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch5_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "5";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch6_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "6";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch7_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "7";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch8_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "8";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch9_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "9";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch10_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "10";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch11_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "11";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch12_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "12";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch13_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "13";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch14_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "14";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch15_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "15";
+            Reservierungsdatum.SelectedDate = DatePickerInnen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde1.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute1.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch101_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "101";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch102_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "102";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch103_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "103";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch104_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "104";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch105_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "105";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch106_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "106";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch107_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "107";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch108_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "108";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch109_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "109";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch110_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "110";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch111_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "111";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch112_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "112";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch113_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "113";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch114_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "114";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void Tisch115_Click(object sender, RoutedEventArgs e)
         {
+            Tischnummer.Text = "115";
+            Reservierungsdatum.SelectedDate = DatePickerAußen.SelectedDate;
+            CB_TimeHour.SelectedIndex = CB_Stunde2.SelectedIndex;
+            CB_TimeMinute.SelectedIndex = CB_Minute2.SelectedIndex;
 
+            TiRes.IsSelected = true;
         }
 
         private void DatePickerInnen_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
@@ -313,8 +464,24 @@ namespace Restaurant_Tischreservierung
                 if (SchonReserviert(Buttons.IndexOf(b) + 1)) 
                 {
                     b.IsEnabled = false;
-                };
+                    b.Foreground = Brushes.Red;
+                    
+
+                }
+                else
+                {
+                    b.IsEnabled = true;
+                    b.Foreground = Brushes.Black;
+                    b.Background = Brushes.Green;
+                }
             }
+        }
+        private void KundenSuche_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionView.Filter = null;
+            string filter = KundenSuche.Text.ToLower();
+            //CollectionView.Filter = x => ((Reservierung)x).Kunde.Name.ToLower().Contains(filter);
+            CollectionView.Filter = x => ((Reservierung)x).Kunde.Name.ToLower().Contains(filter);
         }
     }
 }

@@ -8,7 +8,7 @@
         Title="Restaurant_Tischreservierung" Loaded="Window_Loaded" WindowState="Normal"  Height="450" Width="800">
     <Grid x:Name="ParentGrid">
         <TabControl>
-            <TabItem Header="Reservierung">
+            <TabItem Header="Reservierung" x:Name="TiRes">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -86,8 +86,8 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker x:Name="DatePickerInnen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top" SelectedDateChanged="DatePickerInnen_SelectedDateChanged"></DatePicker>
-                    <ComboBox  x:Name="CB_Stunde1" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <DatePicker SelectedDate="01.01.2022" x:Name="DatePickerInnen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top" SelectedDateChanged="DatePickerInnen_SelectedDateChanged"></DatePicker>
+                    <ComboBox SelectionChanged="DatePickerInnen_SelectedDateChanged" SelectedIndex="0" x:Name="CB_Stunde1" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
                         <ComboBoxItem>12</ComboBoxItem>
@@ -100,10 +100,9 @@
                         <ComboBoxItem>19</ComboBoxItem>
                         <ComboBoxItem>20</ComboBoxItem>
                         <ComboBoxItem>21</ComboBoxItem>
-                        <ComboBoxItem>22</ComboBoxItem>
-                        <ComboBoxItem>23</ComboBoxItem>
+                        
                     </ComboBox>
-                    <ComboBox  x:Name="CB_Minute1" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <ComboBox SelectionChanged="DatePickerInnen_SelectedDateChanged" SelectedIndex="0" x:Name="CB_Minute1" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>00</ComboBoxItem>
                         <ComboBoxItem>15</ComboBoxItem>
                         <ComboBoxItem>30</ComboBoxItem>
@@ -149,8 +148,8 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
-                    <ComboBox  x:Name="CB_Stunde2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <DatePicker SelectedDateChanged="DatePickerInnen_SelectedDateChanged" SelectedDate="01.01.2022" x:Name="DatePickerAußen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <ComboBox SelectionChanged="DatePickerInnen_SelectedDateChanged" SelectedIndex="0" x:Name="CB_Stunde2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
                         <ComboBoxItem>12</ComboBoxItem>
@@ -163,10 +162,9 @@
                         <ComboBoxItem>19</ComboBoxItem>
                         <ComboBoxItem>20</ComboBoxItem>
                         <ComboBoxItem>21</ComboBoxItem>
-                        <ComboBoxItem>22</ComboBoxItem>
-                        <ComboBoxItem>23</ComboBoxItem>
+                        
                     </ComboBox>
-                    <ComboBox  x:Name="CB_Minute3" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <ComboBox SelectionChanged="DatePickerInnen_SelectedDateChanged" SelectedIndex="0" x:Name="CB_Minute2" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>00</ComboBoxItem>
                         <ComboBoxItem>15</ComboBoxItem>
                         <ComboBoxItem>30</ComboBoxItem>
@@ -213,11 +211,11 @@
                             <DataGridTextColumn Header="Reservierungsdatum" Binding="{Binding Reservierungsdatum}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Kundennummer" Binding="{Binding Kundennummer}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Tischnummer" Binding="{Binding Tischnummer}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Kundenname" Binding="{Binding Kunde/Kunde.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kundenname" Binding="{Binding Kunde.Name}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                     <Label Content="Kundenname:" Grid.Row="1"></Label>
-                    <TextBox x:Name="KundenSuche" Grid.Row="2" Grid.ColumnSpan="2"></TextBox>
+                    <TextBox x:Name="KundenSuche" Grid.Row="2" Grid.ColumnSpan="2" TextChanged="KundenSuche_TextChanged"></TextBox>
                 </Grid>
             </TabItem>
         </TabControl>
