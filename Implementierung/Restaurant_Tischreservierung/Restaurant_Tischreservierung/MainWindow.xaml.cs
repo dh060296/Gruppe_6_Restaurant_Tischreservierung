@@ -90,5 +90,155 @@ namespace Restaurant_Tischreservierung
 
             ctx.SaveChanges();
         }
+
+        private void Tisch1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch8_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch11_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch12_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch13_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch14_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch15_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch101_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch102_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch103_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch104_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch105_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch106_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch107_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch108_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch109_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch110_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch111_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch112_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch113_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch114_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Tisch115_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
