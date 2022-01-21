@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RESTAURANT_TISCHRESERVIERUNGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kunde">
+          <Key>
+            <PropertyRef Name="Kundennummer" />
+          </Key>
+          <Property Name="Kundennummer" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Telefonnummer" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Reservierung">
+          <Key>
+            <PropertyRef Name="Reservierungsnummer" />
+          </Key>
+          <Property Name="Reservierungsnummer" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="datetime" />
+          <Property Name="Reservierungsdatum" Type="datetime" />
+          <Property Name="Kundennummer" Type="int" />
+          <Property Name="Tischnummer" Type="int" />
+        </EntityType>
+        <EntityType Name="Tisch">
+          <Key>
+            <PropertyRef Name="Tischnummer" />
+          </Key>
+          <Property Name="Tischnummer" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_kunde">
+          <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
+          <End Role="Reservierung" Type="Self.Reservierung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kunde">
+              <PropertyRef Name="Kundennummer" />
+            </Principal>
+            <Dependent Role="Reservierung">
+              <PropertyRef Name="Kundennummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tisch">
+          <End Role="Tisch" Type="Self.Tisch" Multiplicity="0..1" />
+          <End Role="Reservierung" Type="Self.Reservierung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tisch">
+              <PropertyRef Name="Tischnummer" />
+            </Principal>
+            <Dependent Role="Reservierung">
+              <PropertyRef Name="Tischnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RESTAURANT_TISCHRESERVIERUNGModelStoreContainer">
+          <EntitySet Name="Kunde" EntityType="Self.Kunde" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservierung" EntityType="Self.Reservierung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tisch" EntityType="Self.Tisch" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_kunde" Association="Self.fk_kunde">
+            <End Role="Kunde" EntitySet="Kunde" />
+            <End Role="Reservierung" EntitySet="Reservierung" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tisch" Association="Self.fk_tisch">
+            <End Role="Tisch" EntitySet="Tisch" />
+            <End Role="Reservierung" EntitySet="Reservierung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RESTAURANT_TISCHRESERVIERUNGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kunde">
+          <Key>
+            <PropertyRef Name="Kundennummer" />
+          </Key>
+          <Property Name="Kundennummer" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Telefonnummer" Type="Int64" />
+          <NavigationProperty Name="Reservierung" Relationship="Self.fk_kunde" FromRole="Kunde" ToRole="Reservierung" />
+        </EntityType>
+        <EntityType Name="Reservierung">
+          <Key>
+            <PropertyRef Name="Reservierungsnummer" />
+          </Key>
+          <Property Name="Reservierungsnummer" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Precision="3" />
+          <Property Name="Reservierungsdatum" Type="DateTime" Precision="3" />
+          <Property Name="Kundennummer" Type="Int32" />
+          <Property Name="Tischnummer" Type="Int32" />
+          <NavigationProperty Name="Kunde" Relationship="Self.fk_kunde" FromRole="Reservierung" ToRole="Kunde" />
+          <NavigationProperty Name="Tisch" Relationship="Self.fk_tisch" FromRole="Reservierung" ToRole="Tisch" />
+        </EntityType>
+        <EntityType Name="Tisch">
+          <Key>
+            <PropertyRef Name="Tischnummer" />
+          </Key>
+          <Property Name="Tischnummer" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Reservierung" Relationship="Self.fk_tisch" FromRole="Tisch" ToRole="Reservierung" />
+        </EntityType>
+        <Association Name="fk_kunde">
+          <End Role="Kunde" Type="Self.Kunde" Multiplicity="0..1" />
+          <End Role="Reservierung" Type="Self.Reservierung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kunde">
+              <PropertyRef Name="Kundennummer" />
+            </Principal>
+            <Dependent Role="Reservierung">
+              <PropertyRef Name="Kundennummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tisch">
+          <End Role="Tisch" Type="Self.Tisch" Multiplicity="0..1" />
+          <End Role="Reservierung" Type="Self.Reservierung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tisch">
+              <PropertyRef Name="Tischnummer" />
+            </Principal>
+            <Dependent Role="Reservierung">
+              <PropertyRef Name="Tischnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tischreservierungEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kunde" EntityType="Self.Kunde" />
+          <EntitySet Name="Reservierung" EntityType="Self.Reservierung" />
+          <EntitySet Name="Tisch" EntityType="Self.Tisch" />
+          <AssociationSet Name="fk_kunde" Association="Self.fk_kunde">
+            <End Role="Kunde" EntitySet="Kunde" />
+            <End Role="Reservierung" EntitySet="Reservierung" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tisch" Association="Self.fk_tisch">
+            <End Role="Tisch" EntitySet="Tisch" />
+            <End Role="Reservierung" EntitySet="Reservierung" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RESTAURANT_TISCHRESERVIERUNGModelStoreContainer" CdmEntityContainer="tischreservierungEntities">
+          <EntitySetMapping Name="Kunde">
+            <EntityTypeMapping TypeName="RESTAURANT_TISCHRESERVIERUNGModel.Kunde">
+              <MappingFragment StoreEntitySet="Kunde">
+                <ScalarProperty Name="Kundennummer" ColumnName="Kundennummer" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Telefonnummer" ColumnName="Telefonnummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservierung">
+            <EntityTypeMapping TypeName="RESTAURANT_TISCHRESERVIERUNGModel.Reservierung">
+              <MappingFragment StoreEntitySet="Reservierung">
+                <ScalarProperty Name="Reservierungsnummer" ColumnName="Reservierungsnummer" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Reservierungsdatum" ColumnName="Reservierungsdatum" />
+                <ScalarProperty Name="Kundennummer" ColumnName="Kundennummer" />
+                <ScalarProperty Name="Tischnummer" ColumnName="Tischnummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tisch">
+            <EntityTypeMapping TypeName="RESTAURANT_TISCHRESERVIERUNGModel.Tisch">
+              <MappingFragment StoreEntitySet="Tisch">
+                <ScalarProperty Name="Tischnummer" ColumnName="Tischnummer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
