@@ -42,4 +42,3 @@ CREATE TABLE Reservierung (
 	REFERENCES Tisch(Tischnummer)
 );
 
-
