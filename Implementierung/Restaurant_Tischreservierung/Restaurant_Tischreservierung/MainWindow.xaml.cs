@@ -240,5 +240,11 @@ namespace Restaurant_Tischreservierung
         {
 
         }
+
+        private void KundenSuche_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string filter = KundenSuche.Text.ToLower();
+            CollectionView.Filter = (x => ((Reservierung)x).Kunde.Name.ToLower().Contains(filter));
+        }
     }
 }
