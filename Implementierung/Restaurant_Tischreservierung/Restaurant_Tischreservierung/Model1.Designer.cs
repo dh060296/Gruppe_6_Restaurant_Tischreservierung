@@ -1,4 +1,4 @@
-﻿// Die T4-Codegenerierung ist für Modell 'C:\Schulmaterialien\SOT\Reservierung\Gruppe_6_Restaurant_Tischreservierung\Implementierung\Restaurant_Tischreservierung\Restaurant_Tischreservierung\Model1.edmx' aktiviert. 
+﻿// Die T4-Codegenerierung ist für Modell 'C:\Users\maxi-\Desktop\Schulprojekt\Restaurant\Gruppe_6_Restaurant_Tischreservierung\Implementierung\Restaurant_Tischreservierung\Restaurant_Tischreservierung\Model1.edmx' aktiviert. 
 // Um die Generierung von Legacycode zu aktivieren, ändern Sie den Wert der Designer-Eigenschaft 'Code Generation Strategy'
 // in 'Legacy ObjectContext'. Diese Eigenschaft wird im Eigenschaftenfenster angezeigt, wenn das Modell
 // im Designer geöffnet ist.

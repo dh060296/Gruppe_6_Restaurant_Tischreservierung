@@ -123,7 +123,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="tischreservierungEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="RESTAURANT_TISCHRESERVIERUNGEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Kunde" EntityType="Self.Kunde" />
           <EntitySet Name="Reservierung" EntityType="Self.Reservierung" />
           <EntitySet Name="Tisch" EntityType="Self.Tisch" />
@@ -141,7 +141,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RESTAURANT_TISCHRESERVIERUNGModelStoreContainer" CdmEntityContainer="tischreservierungEntities">
+        <EntityContainerMapping StorageEntityContainer="RESTAURANT_TISCHRESERVIERUNGModelStoreContainer" CdmEntityContainer="RESTAURANT_TISCHRESERVIERUNGEntities1">
           <EntitySetMapping Name="Kunde">
             <EntityTypeMapping TypeName="RESTAURANT_TISCHRESERVIERUNGModel.Kunde">
               <MappingFragment StoreEntitySet="Kunde">

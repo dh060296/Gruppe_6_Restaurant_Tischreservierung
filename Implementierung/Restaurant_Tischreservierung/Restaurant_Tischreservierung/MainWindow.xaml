@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Restaurant_Tischreservierung"
         mc:Ignorable="d"
         Title="Restaurant_Tischreservierung" Loaded="Window_Loaded" WindowState="Normal"  Height="450" Width="800">
-    <Grid x:Name="ParentGrid"> 
+    <Grid x:Name="ParentGrid">
         <TabControl>
             <TabItem Header="Reservierung">
                 <Grid>
@@ -27,7 +27,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    
+
                     <Label Grid.Row="0" Content="Vor- und Nachname:" Grid.ColumnSpan="3"></Label>
                     <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="3"></TextBox>
                     <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
@@ -50,8 +50,7 @@
                         <ComboBoxItem>19</ComboBoxItem>
                         <ComboBoxItem>20</ComboBoxItem>
                         <ComboBoxItem>21</ComboBoxItem>
-                        <ComboBoxItem>22</ComboBoxItem>
-                        <ComboBoxItem>23</ComboBoxItem>
+                        
                     </ComboBox>
                     <Label Grid.Row="6" Content="Uhrzeit Minuten" Grid.Column="2"></Label>
                     <ComboBox  x:Name="CB_TimeMinute" Grid.Row="7" Grid.Column="2" IsReadOnly="True">
@@ -60,11 +59,11 @@
                         <ComboBoxItem>30</ComboBoxItem>
                         <ComboBoxItem>45</ComboBoxItem>
                     </ComboBox>
-                    
+
                     <Button x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="3" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Header="Innenbereich">
                 <Grid>
                     <Grid.ColumnDefinitions>

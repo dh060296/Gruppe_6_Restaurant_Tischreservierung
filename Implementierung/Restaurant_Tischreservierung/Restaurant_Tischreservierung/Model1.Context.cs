@@ -13,10 +13,10 @@ namespace Restaurant_Tischreservierung
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class tischreservierungEntities : DbContext
+    public partial class RESTAURANT_TISCHRESERVIERUNGEntities1 : DbContext
     {
-        public tischreservierungEntities()
-            : base("name=tischreservierungEntities")
+        public RESTAURANT_TISCHRESERVIERUNGEntities1()
+            : base("name=RESTAURANT_TISCHRESERVIERUNGEntities1")
         {
         }
     
