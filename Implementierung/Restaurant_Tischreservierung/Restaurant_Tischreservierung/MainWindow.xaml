@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Restaurant_Tischreservierung"
         mc:Ignorable="d"
-        Title="Restaurant_Tischreservierung" WindowState="Maximized" Height="450" Width="800">
-    <Grid>
+        Title="Restaurant_Tischreservierung" Loaded="Window_Loaded" WindowState="Maximized" Height="450" Width="800">
+    <Grid x:Name="ParentGrid"> 
         <TabControl>
             <TabItem Header="Reservierung">
                 <Grid>
@@ -14,26 +14,48 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                         
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Name:" Grid.ColumnSpan="2"></Label>
-                    <TextBox x:Name="Name" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
-                    <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
-                    <TextBox x:Name="Tefelonnummer" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-                    <Label Grid.Row="4" Grid.ColumnSpan="2" Content="Tischnummer:"></Label>
-                    <TextBox x:Name="Tischnummer" Grid.Row="5" Grid.ColumnSpan="2"></TextBox>
-                    <Label Grid.Row="6" Content="Reservierungszeitraum" Grid.ColumnSpan="2"></Label>
-                    <DatePicker Grid.Row="7" Grid.ColumnSpan="2"></DatePicker>
-                    <Button x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="2" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
+                    <DataGrid Grid.Row="0"
+                              ItemsSource="{Binding }"
+                              AutoGenerateColumns="False"
+                              IsSynchronizedWithCurrentItem="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Reservierungsnummer" Binding="{Binding Reservierungsnummer}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Reservierungsdatum" Binding="{Binding Reservierungsdatum}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Kundennummer" Binding="{Binding Kundennummer}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Tischnummer" Binding="{Binding Tischnummer}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Grid.Row="2" Content="Name:" Grid.ColumnSpan="2"></Label>
+                    <TextBox x:Name="Name" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="4" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
+                    <TextBox x:Name="Telefonnummer" Grid.Row="5" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="6" Grid.ColumnSpan="2" Content="Tischnummer:"></Label>
+                    <TextBox x:Name="Tischnummer" Grid.Row="7" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="8" Content="Reservierungszeitraum" Grid.ColumnSpan="2"></Label>
+                    <DatePicker x:Name="Reservierungsdatum" Grid.Row="9" Grid.ColumnSpan="2"></DatePicker>
+                    <Label Grid.Row="10" Content="Kundennummer:" Grid.ColumnSpan="2"></Label>
+                    <TextBox x:Name="KNr" Grid.Row="11" Grid.ColumnSpan="2"></TextBox>
+                    <Label Grid.Row="12" Content="Reservierungsnummer:" Grid.ColumnSpan="2"></Label>
+                    <TextBox x:Name="RNr" Grid.Row="13" Grid.ColumnSpan="2"></TextBox>
+                    <Button x:Name="Btn_Reservierung" Grid.Row="14" Grid.ColumnSpan="2" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
                 </Grid>
             </TabItem>
             
