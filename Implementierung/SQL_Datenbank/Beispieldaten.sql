@@ -1,0 +1,16 @@
+USE RESTAURANT_TISCHRESERVIERUNG
+GO
+
+DELETE FROM Reservierung;
+DELETE FROM Kunde;
+DELETE FROM Tisch;
+
+INSERT INTO Kunde VALUES (1,'Müller', 975389257123),(2,'Schmidt', 578356947326),(3,'Mayer', 819256483950),(4,'Mustermann', 132857189401),
+						 (5,'Schneider', 0183271582421),(6,'Fischer', 745743810492),(7,'Weber', 173471502817),(8,'Dali', 766404367413);
+
+INSERT INTO Tisch VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(11),(12),(13),(14),(15),(16),(17),(18),(19),(20),(21),(22),(23),(24),(25),(26),(27),(28),(29),(30);
+
+INSERT INTO Reservierung VALUES (1, GETDATE(), '12-02-2022 12:32',1,5),(2, GETDATE(), '09-02-2022 12:00',2,1),
+								(3, GETDATE(), '10-02-2022 18:15',3,5),(4, GETDATE(), '12-02-2022 12:32',4,7),
+								(5, GETDATE(), '03-02-2022 17:55',5,2),(6, GETDATE(), '07-04-2022 12:32',6,3),
+								(7, GETDATE(), '04-02-2022 11:36',7,4),(8, GETDATE(), '24-04-2022 12:00',8,4)
