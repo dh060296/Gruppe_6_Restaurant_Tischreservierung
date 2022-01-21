@@ -37,22 +37,34 @@ namespace Restaurant_Tischreservierung
         }
 
         private void Btn_Reservierung_Click(object sender, RoutedEventArgs e)
-        {  
-            //string name = Name.Text;
-            //int telefonnummer = Convert.ToInt32(Telefonnummer.Text);
-            //int tischnummer = Convert.ToInt32(Tischnummer.Text);
-            //DateTime reservierungsDatum = (DateTime)Reservierungsdatum.SelectedDate;
+        {
+            string name = Name.Text;
+            uint telefonnummer = Convert.ToUInt32(Telefonnummer.Text);
+            int tischnummer = Convert.ToInt32(Tischnummer.Text);
 
-            //Kunde NeuerKunde = new Kunde();
-            //NeuerKunde.Name = name;
-            //NeuerKunde.Telefonnummer = telefonnummer;
 
-            //Reservierung rsv = new Reservierung();
-            //rsv.Reservierungsdatum = reservierungsDatum;
-            //rsv.Datum = DateTime.Now;
+            int Kundenanzahl = ctx.Kunde.Count();
+            int Reservierungsanzahl = ctx.Reservierung.Count();
 
-            //ctx.Kunde.Add(NeuerKunde);
-            //ctx.Reservierung.Add(rsv);
+            Kunde NeuerKunde = new Kunde();
+            NeuerKunde.Name = name;
+            NeuerKunde.Telefonnummer = telefonnummer;
+            NeuerKunde.Kundennummer = Kundenanzahl + 1;
+
+
+            ctx.Kunde.Add(NeuerKunde);
+
+            Reservierung rsv = new Reservierung();
+
+            rsv.Datum = DateTime.Now;
+            rsv.Reservierungsdatum = (DateTime)Reservierungsdatum.SelectedDate;
+            rsv.Reservierungsnummer = Reservierungsanzahl + 1;
+            rsv.Tischnummer = tischnummer;
+            rsv.Kundennummer = Kundenanzahl + 1;
+
+
+            ctx.Reservierung.Add(rsv);
+
 
             ctx.SaveChanges();
         }
