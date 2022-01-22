@@ -476,5 +476,25 @@ namespace Restaurant_Tischreservierung
             string filter = KundenSuche.Text.ToLower();
             CollectionView.Filter = (x => ((Reservierung)x).Kunde.Name.ToLower().Contains(filter));
         }
+
+        private void CB_Stunde2_LostFocus(object sender, RoutedEventArgs e)
+        {
+            foreach (Button b in Buttons)
+            {
+                if (SchonReserviert(Buttons.IndexOf(b) + 1))
+                {
+                    b.IsEnabled = false;
+                    b.Foreground = Brushes.Red;
+
+
+                }
+                else
+                {
+                    b.IsEnabled = true;
+                    b.Foreground = Brushes.Black;
+                    b.Background = Brushes.Green;
+                }
+            }
+        }
     }
 }

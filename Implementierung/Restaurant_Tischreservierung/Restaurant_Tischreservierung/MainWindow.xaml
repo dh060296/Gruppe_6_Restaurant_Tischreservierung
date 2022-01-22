@@ -87,8 +87,8 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker x:Name="DatePickerInnen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
-                    <ComboBox  x:Name="CB_Stunde1" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <DatePicker  x:Name="DatePickerInnen" SelectedDateChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedDate="01.01.2022" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <ComboBox  x:Name="CB_Stunde1" SelectionChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedIndex="0" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
                         <ComboBoxItem>12</ComboBoxItem>
@@ -104,7 +104,7 @@
                         <ComboBoxItem>22</ComboBoxItem>
                         <ComboBoxItem>23</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox  x:Name="CB_Minute1" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <ComboBox  x:Name="CB_Minute1" SelectionChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedIndex="0" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>00</ComboBoxItem>
                         <ComboBoxItem>15</ComboBoxItem>
                         <ComboBoxItem>30</ComboBoxItem>
@@ -150,8 +150,8 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker x:Name="DatePickerAußen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
-                    <ComboBox  x:Name="CB_Stunde2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <DatePicker x:Name="DatePickerAußen" SelectedDateChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedDate="01.01.2022" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <ComboBox  x:Name="CB_Stunde2" SelectionChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedIndex="0" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
                         <ComboBoxItem>12</ComboBoxItem>
@@ -167,7 +167,7 @@
                         <ComboBoxItem>22</ComboBoxItem>
                         <ComboBoxItem>23</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox  x:Name="CB_Minute2" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
+                    <ComboBox  x:Name="CB_Minute2" SelectionChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedIndex="0" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>00</ComboBoxItem>
                         <ComboBoxItem>15</ComboBoxItem>
                         <ComboBoxItem>30</ComboBoxItem>
