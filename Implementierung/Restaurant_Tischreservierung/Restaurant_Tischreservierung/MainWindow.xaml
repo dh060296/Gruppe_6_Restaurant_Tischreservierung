@@ -8,7 +8,7 @@
         Title="Restaurant_Tischreservierung" Loaded="Window_Loaded" WindowState="Normal"  Height="450" Width="800">
     <Grid x:Name="ParentGrid"> 
         <TabControl>
-            <TabItem Header="Reservierung">
+            <TabItem x:Name="TiRes" Header="Reservierung">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -65,7 +65,7 @@
                 </Grid>
             </TabItem>
             
-            <TabItem Header="Innenbereich">
+            <TabItem x:Name="TiInnen" Header="Innenbereich">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -87,7 +87,7 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <DatePicker x:Name="DatePickerInnen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
                     <ComboBox  x:Name="CB_Stunde1" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
@@ -128,7 +128,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Außenbereich">
+            <TabItem x:Name="TiAußen" Header="Außenbereich">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -150,7 +150,7 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DatePicker Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
+                    <DatePicker x:Name="DatePickerAußen" Grid.Column="1" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Top"></DatePicker>
                     <ComboBox  x:Name="CB_Stunde2" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
@@ -191,7 +191,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Reservierungen Anzeigen">
+            <TabItem x:Name="TiResAnzeigen" Header="Reservierungen Anzeigen">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"></ColumnDefinition>
