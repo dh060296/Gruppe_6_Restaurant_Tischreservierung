@@ -111,7 +111,7 @@ namespace Restaurant_Tischreservierung
 
             rsv.Datum = DateTime.Now;
             rsv.Reservierungsdatum = neuerVersuch;
-            rsv.Reservierungsnummer = Reservierungsanzahl + 1;
+            
             rsv.Tischnummer = tischnummer;
             rsv.Kundennummer = Kundenanzahl + 1;
 

@@ -22,7 +22,7 @@ namespace Restaurant_Tischreservierung
     
         public int Kundennummer { get; set; }
         public string Name { get; set; }
-        public Nullable<long> Telefonnummer { get; set; }
+        public long Telefonnummer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservierung> Reservierung { get; set; }
