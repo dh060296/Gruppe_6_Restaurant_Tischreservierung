@@ -26,6 +26,10 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     
                     <Label Grid.Row="0" Content="Vor- und Nachname:" Grid.ColumnSpan="3"></Label>
@@ -60,8 +64,11 @@
                         <ComboBoxItem>30</ComboBoxItem>
                         <ComboBoxItem>45</ComboBoxItem>
                     </ComboBox>
-                    
-                    <Button x:Name="Btn_Reservierung" Grid.Row="8" Grid.ColumnSpan="3" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
+                    <Button x:Name="Btn_Pruefen" Grid.Row="8" Grid.ColumnSpan="3" Content="Eingaben prüfen" Click="Btn_Pruefen_Click"></Button>
+                    <Button x:Name="Btn_Reservierung" Grid.Row="9" Grid.ColumnSpan="3" IsEnabled="False" Content="Reservierung eintragen" Click="Btn_Reservierung_Click"></Button>
+                    <Label x:Name="MeldungNameLabel" Grid.Row="10" Grid.ColumnSpan="3" Foreground="Red"></Label>
+                    <Label x:Name="MeldungTelefonLabel" Grid.Row="11" Grid.ColumnSpan="3" Foreground="Red"></Label>
+                    <Label x:Name="MeldungDatumLabel" Grid.Row="12" Grid.ColumnSpan="3" Foreground="Red"></Label>
                 </Grid>
             </TabItem>
             
@@ -101,8 +108,6 @@
                         <ComboBoxItem>19</ComboBoxItem>
                         <ComboBoxItem>20</ComboBoxItem>
                         <ComboBoxItem>21</ComboBoxItem>
-                        <ComboBoxItem>22</ComboBoxItem>
-                        <ComboBoxItem>23</ComboBoxItem>
                     </ComboBox>
                     <ComboBox  x:Name="CB_Minute1" SelectionChanged="DatePickerInnen_SelectedDateChanged" LostFocus="CB_Stunde2_LostFocus" SelectedIndex="0" Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2" IsReadOnly="True" Height="25" VerticalAlignment="Top">
                         <ComboBoxItem>00</ComboBoxItem>
@@ -202,7 +207,7 @@
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
-
+                        <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     <DataGrid Grid.Row="0" Grid.ColumnSpan="2"
                               ItemsSource="{Binding }"
@@ -219,6 +224,7 @@
                     </DataGrid>
                     <Label Content="Kundenname:" Grid.Row="1"></Label>
                     <TextBox x:Name="KundenSuche" Grid.Row="2" Grid.ColumnSpan="2" TextChanged="KundenSuche_TextChanged"></TextBox>
+                    <Label x:Name="ReservierungsAnzahl" Grid.Row="3"></Label>
                 </Grid>
             </TabItem>
         </TabControl>
