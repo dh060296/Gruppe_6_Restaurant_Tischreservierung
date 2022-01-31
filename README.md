@@ -1,5 +1,8 @@
-# Restaurant_Tischreservierung
-6. Projekt: Restaurant-Tischreservierung - Daniel Hofmann dh060296 ; Maximilian Trenz ChibyKito ; Tim Glaser tglaser1
+# 6. Projekt: Restaurant-Tischreservierung - Daniel Hofmann dh060296 ; Maximilian Trenz ChibyKito ; Tim Glaser tglaser1
+
+Zur Benutzung des Programms ist die Datenbank RESTAURANT_TISCHRESERVIERUNG nötig. In der vorhandenen .sql-Datei sind ein Skript zum erstellen der Datenbank und fiktive Beispieldaten vorhanden. Um sich die Reservierungen anzeigen zu lassen und die Filterfunktion zu benutzen, sollte man ein Entity-Framework einbinden.
+
+# Kurzbeschreibung zur Nutzung des Programms:
 
 Das Programm startet im Tab "Innenbereich"
 ![grafik](https://user-images.githubusercontent.com/95036785/151723201-08b2ec62-34ed-4924-b057-29706366ed71.png)
