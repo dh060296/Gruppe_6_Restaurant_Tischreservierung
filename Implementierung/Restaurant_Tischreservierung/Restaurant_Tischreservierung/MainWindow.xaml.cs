@@ -25,6 +25,7 @@ namespace Restaurant_Tischreservierung
         private ICollectionView CollectionView;
         private tischreservierungEntities ctx = new tischreservierungEntities();
         List<Button> Buttons = new List<Button>();
+        private int anzahlReservierungen;
         public MainWindow()
         {
             InitializeComponent();
@@ -58,6 +59,10 @@ namespace Restaurant_Tischreservierung
             Buttons.Add(Tisch113);
             Buttons.Add(Tisch114);
             Buttons.Add(Tisch115);
+            TiInnen.Focus();
+
+            anzahlReservierungen = ctx.Reservierung.Count();
+            ReservierungsAnzahl.Content = $"Anzahl Reservierungen: {anzahlReservierungen}";
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -67,27 +72,39 @@ namespace Restaurant_Tischreservierung
             ParentGrid.DataContext = CollectionView;
         }
 
-        private void Btn_Reservierung_Click(object sender, RoutedEventArgs e)
+        private void Btn_Pruefen_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-            string name = Name.Text;
-            uint telefonnummer = Convert.ToUInt32(Telefonnummer.Text);
-            int tischnummer = Convert.ToInt32(Tischnummer.Text);
-
-            int Kundenanzahl = ctx.Kunde.Count();
-            int Reservierungsanzahl = ctx.Reservierung.Count();
-
             Kunde NeuerKunde = new Kunde();
-            NeuerKunde.Name = name;
-            NeuerKunde.Telefonnummer = telefonnummer;
+            try
+            {
+                if (Name.Text == "")
+                {
+                    throw new LeeresFeldException("Namensfeld leer");
 
-            NeuerKunde.Kundennummer = Kundenanzahl + 1;
+                }
+                string name = Name.Text;
+                NeuerKunde.Name = name;
 
+            }
+            catch
+            {
+                MeldungNameLabel.Content = "Bitte geben füllen das Namensfeld aus!";
+            }
 
-
-            ctx.Kunde.Add(NeuerKunde);
+            try
+            {
+                if (Telefonnummer.Text == "")
+                {
+                    throw new LeeresFeldException("Telefonnummerfeld leer");
+                }
+                uint telefonnummer = Convert.ToUInt32(Telefonnummer.Text);
+                NeuerKunde.Telefonnummer = telefonnummer;
+            }
+            catch
+            {
+                MeldungTelefonLabel.Content = "Bitte geben Sie eine gültige Telefonnummer ein!";
+            }
+            int tischnummer = Convert.ToInt32(Tischnummer.Text);
 
             Reservierung rsv = new Reservierung();
 
@@ -102,24 +119,55 @@ namespace Restaurant_Tischreservierung
 
             int Sekunde = 0;
 
-            DateTime neuerVersuch = new DateTime(Jahr, Monat, Tag, temphour, tempmin, Sekunde);
+            DateTime ResDatum = new DateTime(Jahr, Monat, Tag, temphour, tempmin, Sekunde);
+
+            try
+            {
+                if (ResDatum < DateTime.Now)
+                {
+                    throw new DatumException("ungültiges Datum");
+                }
+                rsv.Reservierungsdatum = ResDatum;
+            }
+            catch
+            {
+                MeldungDatumLabel.Content = "Ihr Reservierungsdatum darf nicht vor dem heutigen Tag liegen";
+            }
+
+            if(Name.Text != "" && Telefonnummer.Text != "" && ResDatum > DateTime.Now)
+            {
+                int Kundenanzahl = ctx.Kunde.Count();
+                int Reservierungsanzahl = ctx.Reservierung.Count();
+
+                NeuerKunde.Kundennummer = Kundenanzahl + 1;
+                ctx.Kunde.Add(NeuerKunde);
+                rsv.Datum = DateTime.Now;
 
 
-
-
-
-
-            rsv.Datum = DateTime.Now;
-            rsv.Reservierungsdatum = neuerVersuch;
-            
-            rsv.Tischnummer = tischnummer;
-            rsv.Kundennummer = Kundenanzahl + 1;
-
-
-            ctx.Reservierung.Add(rsv);
-
-
+                rsv.Tischnummer = tischnummer;
+                rsv.Kundennummer = Kundenanzahl + 1;
+                
+                ctx.Reservierung.Add(rsv);
+                MeldungNameLabel.Foreground = Brushes.Green;
+                MeldungNameLabel.Content = "Die Reservierung kann eingetragen werden.";
+                MeldungTelefonLabel.Content = "";
+                MeldungDatumLabel.Content = "";
+                Btn_Reservierung.IsEnabled = true;
+                
+            }
+        }
+        private void Btn_Reservierung_Click(object sender, RoutedEventArgs e)
+        {
+            CollectionView = null;  
             ctx.SaveChanges();
+            MessageBox.Show("Tisch wurde reserviert.");
+            Name.Text = "";
+            Telefonnummer.Text = "";
+            Tischnummer.Text = "";
+            MeldungNameLabel.Content = "";
+            TiInnen.Focus();
+            anzahlReservierungen += 1;
+            ReservierungsAnzahl.Content = $"Anzahl Reservierungen: {anzahlReservierungen}";
         }
 
         private bool SchonReserviert(int Tischzahl)
@@ -496,5 +544,6 @@ namespace Restaurant_Tischreservierung
                 }
             }
         }
+
     }
 }
