@@ -23,7 +23,7 @@ namespace Restaurant_Tischreservierung
     public partial class MainWindow : Window
     {
         private ICollectionView CollectionView;
-        private tischreservierungEntities ctx = new tischreservierungEntities();
+        private RESTAURANT_TISCHRESERVIERUNGEntities ctx = new RESTAURANT_TISCHRESERVIERUNGEntities();
         List<Button> Buttons = new List<Button>();
         private int anzahlReservierungen;
         public MainWindow()
@@ -97,8 +97,8 @@ namespace Restaurant_Tischreservierung
                 {
                     throw new LeeresFeldException("Telefonnummerfeld leer");
                 }
-                uint telefonnummer = Convert.ToUInt32(Telefonnummer.Text);
-                NeuerKunde.Telefonnummer = telefonnummer;
+                
+                NeuerKunde.Telefonnummer = Telefonnummer.Text;
             }
             catch
             {
@@ -158,7 +158,6 @@ namespace Restaurant_Tischreservierung
         }
         private void Btn_Reservierung_Click(object sender, RoutedEventArgs e)
         {
-            CollectionView = null;  
             ctx.SaveChanges();
             MessageBox.Show("Tisch wurde reserviert.");
             Name.Text = "";
@@ -521,8 +520,8 @@ namespace Restaurant_Tischreservierung
 
         private void KundenSuche_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string filter = KundenSuche.Text.ToLower();
-            CollectionView.Filter = (x => ((Reservierung)x).Kunde.Name.ToLower().Contains(filter));
+                string filter = KundenSuche.Text.ToLower();
+                CollectionView.Filter = (x => ((Reservierung)x).Kunde.Name.ToLower().Contains(filter));
         }
 
         private void CB_Stunde2_LostFocus(object sender, RoutedEventArgs e)
@@ -545,5 +544,22 @@ namespace Restaurant_Tischreservierung
             }
         }
 
+        private void BtnVor_Click(object sender, RoutedEventArgs e)
+        {
+                CollectionView.MoveCurrentToNext();
+                if (CollectionView.IsCurrentAfterLast)
+                {
+                    CollectionView.MoveCurrentToFirst();
+                }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+                CollectionView.MoveCurrentToLast();
+                if (CollectionView.IsCurrentAfterLast)
+                {
+                    CollectionView.MoveCurrentToLast();
+                }
+        }
     }
 }

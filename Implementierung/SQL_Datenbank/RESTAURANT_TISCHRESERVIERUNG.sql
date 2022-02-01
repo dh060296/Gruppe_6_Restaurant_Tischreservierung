@@ -47,8 +47,8 @@ DELETE FROM Kunde;
 DELETE FROM Tisch;
 
 
-INSERT INTO Kunde(Name,Telefonnummer) VALUES ('Müller', 975389257123),('Schmidt', 578356947326),('Mayer', 819256483950),('Mustermann', 132857189401),
-											 ('Schneider', 0183271582421),('Fischer', 745743810492),('Weber', 173471502817),('Dali', 766404367413);
+INSERT INTO Kunde(Name,Telefonnummer) VALUES ('Müller', '975389257123'),('Schmidt', '578356947326'),('Mayer', '819256483950'),('Mustermann', '132857189401'),
+											 ('Schneider', '0183271582421'),('Fischer', '745743810492'),('Weber', '173471502817'),('Dali', '766404367413');
 
 INSERT INTO Tisch VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(11),(12),(13),(14),(15),(101),(102),(103),(104),(105),(106),(107),(108),(109),(110),(111),(112),(113),(114),(115);
 
