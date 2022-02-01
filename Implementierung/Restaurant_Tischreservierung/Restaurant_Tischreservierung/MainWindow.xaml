@@ -37,11 +37,11 @@
                     <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Telefonnummer:"></Label>
                     <TextBox x:Name="Telefonnummer" Grid.Row="3" Grid.ColumnSpan="3"></TextBox>
                     <Label Grid.Row="4" Grid.ColumnSpan="3" Content="Tischnummer:"></Label>
-                    <TextBox x:Name="Tischnummer" Grid.Row="5" Grid.ColumnSpan="3"></TextBox>
+                    <TextBox x:Name="Tischnummer" IsEnabled="False" Grid.Row="5" Grid.ColumnSpan="3" Text="1"></TextBox>
                     <Label Grid.Row="6" Content="Reservierungszeitraum" Grid.ColumnSpan="3"></Label>
-                    <DatePicker x:Name="Reservierungsdatum" SelectedDateFormat="Short" Grid.Row="7"></DatePicker>
+                    <DatePicker x:Name="Reservierungsdatum" SelectedDateFormat="Short" Grid.Row="7" SelectedDate="01.01.2022"></DatePicker>
                     <Label Grid.Row="6" Content="Uhrzeit Stunden" Grid.Column="1"></Label>
-                    <ComboBox  x:Name="CB_TimeHour" Grid.Row="7" Grid.Column="1" IsReadOnly="True">
+                    <ComboBox  x:Name="CB_TimeHour" Grid.Row="7" Grid.Column="1" SelectedIndex="1" IsReadOnly="True">
                         <ComboBoxItem>10</ComboBoxItem>
                         <ComboBoxItem>11</ComboBoxItem>
                         <ComboBoxItem>12</ComboBoxItem>
@@ -58,7 +58,7 @@
                         <ComboBoxItem>23</ComboBoxItem>
                     </ComboBox>
                     <Label Grid.Row="6" Content="Uhrzeit Minuten" Grid.Column="2"></Label>
-                    <ComboBox  x:Name="CB_TimeMinute" Grid.Row="7" Grid.Column="2" IsReadOnly="True">
+                    <ComboBox  x:Name="CB_TimeMinute" Grid.Row="7" Grid.Column="2" IsReadOnly="True" SelectedIndex="1">
                         <ComboBoxItem>00</ComboBoxItem>
                         <ComboBoxItem>15</ComboBoxItem>
                         <ComboBoxItem>30</ComboBoxItem>
@@ -208,11 +208,14 @@
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <DataGrid Grid.Row="0" Grid.ColumnSpan="2"
+                    <DataGrid x:Name="DG_Reservierungen" Grid.Row="0" Grid.ColumnSpan="2"
                               ItemsSource="{Binding }"
                               AutoGenerateColumns="False"
-                              IsSynchronizedWithCurrentItem="True">
+                              IsSynchronizedWithCurrentItem="True"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Reservierungsnummer" Binding="{Binding Reservierungsnummer}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Datum" Binding="{Binding Datum}"></DataGridTextColumn>
@@ -222,9 +225,11 @@
                             <DataGridTextColumn Header="Kundenname" Binding="{Binding Kunde.Name}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Label Content="Kundenname:" Grid.Row="1"></Label>
-                    <TextBox x:Name="KundenSuche" Grid.Row="2" Grid.ColumnSpan="2" TextChanged="KundenSuche_TextChanged"></TextBox>
-                    <Label x:Name="ReservierungsAnzahl" Grid.Row="3"></Label>
+                    <Button x:Name="BtnVor" Content="Vor" Grid.Row="1" Grid.ColumnSpan="2" Click="BtnVor_Click"></Button>
+                    <Button x:Name="BtnBack" Content="Zurück" Grid.Row="2" Grid.ColumnSpan="2" Click="BtnBack_Click"></Button>
+                    <Label Content="Kundenname:" Grid.Row="3"></Label>
+                    <TextBox x:Name="KundenSuche" Grid.Row="4" Grid.ColumnSpan="2" TextChanged="KundenSuche_TextChanged"></TextBox>
+                    <Label x:Name="ReservierungsAnzahl" Grid.Row="5"></Label>
                 </Grid>
             </TabItem>
         </TabControl>
