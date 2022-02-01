@@ -1,3 +1,0 @@
-use master
-GO
-
